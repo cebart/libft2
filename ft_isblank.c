@@ -1,39 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_isblank.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbartoli <cbartoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/27 11:17:09 by cbartoli          #+#    #+#             */
-/*   Updated: 2018/04/04 12:51:51 by cbartoli         ###   ########.fr       */
+/*   Created: 2018/04/04 12:57:01 by cbartoli          #+#    #+#             */
+/*   Updated: 2018/04/04 13:05:44 by cbartoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strtrim(char const *s)
+int	ft_isblank(char c)
 {
-	int		start;
-	int		len;
-	int		end;
-	char	*sr;
-
-	len = 0;
-	start = 0;
-	end = (ft_strlen(s) - 1);
-	while (ft_isspace(s[end]))
-	{
-		len++;
-		end--;
-	}
-	if (!(sr = ft_strnew(len)))
-		return (NULL);
-	if (end < 0)
-		return (sr);
-	while (ft_isspace(s[start]))
-		start++;
-	len = ft_strlen(s) - start - len;
-	sr = ft_strsub(s, start, (size_t)len);
-	return (sr);
+	if (c == ' ' || c == '\t')
+		return (1);
+	return (0);
 }

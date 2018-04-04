@@ -1,39 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbartoli <cbartoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/27 11:17:09 by cbartoli          #+#    #+#             */
-/*   Updated: 2018/04/04 12:51:51 by cbartoli         ###   ########.fr       */
+/*   Created: 2018/04/04 12:48:04 by cbartoli          #+#    #+#             */
+/*   Updated: 2018/04/04 12:56:14 by cbartoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strtrim(char const *s)
+int	ft_isspace(int c)
 {
-	int		start;
-	int		len;
-	int		end;
-	char	*sr;
-
-	len = 0;
-	start = 0;
-	end = (ft_strlen(s) - 1);
-	while (ft_isspace(s[end]))
-	{
-		len++;
-		end--;
-	}
-	if (!(sr = ft_strnew(len)))
-		return (NULL);
-	if (end < 0)
-		return (sr);
-	while (ft_isspace(s[start]))
-		start++;
-	len = ft_strlen(s) - start - len;
-	sr = ft_strsub(s, start, (size_t)len);
-	return (sr);
+	if (c == ' ' || c == '\n' || c == '\t' || c == '\r'
+			|| c == '\v' || c == '\f')
+		return (1);
+	return (0);
 }

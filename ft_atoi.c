@@ -6,7 +6,7 @@
 /*   By: cbartoli <cbartoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 14:40:25 by cbartoli          #+#    #+#             */
-/*   Updated: 2017/12/01 14:41:43 by cbartoli         ###   ########.fr       */
+/*   Updated: 2018/04/04 12:52:23 by cbartoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,6 @@ static int	ft_is_negativ(char c)
 	if (c == '-')
 		sign = -1;
 	return (sign);
-}
-
-static int	ft_isspace(char c)
-{
-	if (c == ' ' || c == '\n' || c == '\t' || c == '\r'
-			|| c == '\v' || c == '\f')
-		return (1);
-	return (0);
 }
 
 int			ft_atoi(const char *str)
