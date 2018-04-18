@@ -24,8 +24,8 @@ static int	ft_is_negativ(char c)
 
 int			ft_atoi(const char *str)
 {
-	int sign;
-	int result;
+	unsigned int sign;
+	unsigned int result;
 
 	result = 0;
 	while (ft_isspace(*str))

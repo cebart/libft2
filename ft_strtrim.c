@@ -27,7 +27,7 @@ char		*ft_strtrim(char const *s)
 		len++;
 		end--;
 	}
-	if (!(sr = ft_strnew(len)))
+	if (!(sr = ft_strnew(len - 1)))
 		return (NULL);
 	if (end < 0)
 		return (sr);
