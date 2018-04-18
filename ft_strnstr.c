@@ -14,29 +14,29 @@
 
 char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
-	size_t i;
-	size_t j;
-	size_t k;
+	size_t 	i;
+	char 	*j;
+	char	*k;
 
 	i = 0;
-	j = 0;
-	k = 0;
-	if (!len)
-		return (NULL);
-	while (to_find[k])
-		k++;
-	if (!k)
+	if (!*to_find)
 		return ((char *)str);
 	while (str[i] && len--)
 	{
-		while (to_find[j] == str[i + j] && (len - j) > 0)
+		if (*str == *to_find)
 		{
-			if (j == k - 1)
-				return ((char *)str + i);
-			j++;
+			i = len;
+			j = (char *)str + 1;
+			k = (char *)to_find + 1;
+			while (i-- && *j && *k && *j == *k)
+			{
+				j++;
+				k++;
+			}
+			if (!*k)
+				return ((char *)str);
 		}
-		j = 0;
-		i++;
+		str++;
 	}
 	return (NULL);
 }
