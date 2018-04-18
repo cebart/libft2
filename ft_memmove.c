@@ -14,10 +14,25 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char	temp[n];
+	size_t			i;
+	unsigned char 	*a;
+	unsigned char 	*b;
 
-	ft_memcpy(temp, src, n);
-	ft_memcpy(dest, temp, n);
-	ft_bzero(temp, n);
+	i = 0;
+	a = (unsigned char*)dest;
+	b = (unsigned char*)src;
+	while (i < n)
+	{
+		if (a > b)
+		{
+			a[n - 1] = b[n - 1];
+			n--;
+		}
+		else
+		{
+			a[i] = b[i];
+			i++;
+		}
+	}
 	return (dest);
 }
