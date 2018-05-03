@@ -82,6 +82,8 @@ char					**ft_strsplit(char const *s, char c)
 	int		wrds;
 	char	**tab;
 
+	if (!s || !c)
+		return (NULL);
 	wrds = ft_countw(s, c);
 	if (!(tab = (char **)malloc(sizeof(char *) * wrds + 1)))
 		return (NULL);

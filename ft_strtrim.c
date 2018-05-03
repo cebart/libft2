@@ -21,6 +21,8 @@ char		*ft_strtrim(char const *s)
 
 	len = 0;
 	start = 0;
+	if (!s)
+		return (NULL);
 	end = (ft_strlen(s) - 1);
 	while (ft_isspace(s[end]))
 	{
