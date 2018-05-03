@@ -89,7 +89,7 @@ int				ft_str_is_lowercase(char *str);
 int				ft_str_is_uppercase(char *str);
 int				ft_str_is_printable(char *str);
 int				ft_isspace(int c);
-int				ft_isblank(char c);
-int				ft_islower(char c);
-int				ft_isupper(char c);
+int				ft_isblank(int c);
+int				ft_islower(int c);
+int				ft_isupper(int c);
 #endif

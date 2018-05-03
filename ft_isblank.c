@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	ft_isblank(char c)
+int	ft_isblank(int c)
 {
 	if (c == ' ' || c == '\t')
 		return (1);
